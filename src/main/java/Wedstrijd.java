@@ -110,7 +110,6 @@ public class Wedstrijd {
 //            int behaaldePunten = chipring.getAfstandGevlogen() + sorted.size() + 1 - (i + 1);
 //        }
 
-
     }
 
 
