@@ -1,0 +1,8 @@
+public enum Rol {
+    VOORZITTER,
+    DUIVENMELKER,
+    STILLID,
+    INKORVER,
+    BARMEDEWERKER,
+    WEDSTRIJDBEREKENAAR
+}
