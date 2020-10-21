@@ -83,32 +83,26 @@ public class Wedstrijd {
 
         }
 
+        //Sort Hashmap
+        List<Map.Entry<Double,Duif>> sortedEntries = new
+                ArrayList<Map.Entry<Double,Duif>>((Collection<? extends Map.Entry<Double, Duif>>) wedstrijdUitslag.entrySet());
 
+        Collections.sort(sortedEntries, new Comparator<Map.Entry<Double,Duif>>() {
+            @Override
+            public int compare(Map.Entry<Double, Duif> a, Map.Entry<Double, Duif> b)
+            {
+                //Sorting is done here make changes as per your need
+                // swap a and b for descending order in return statement
+                return b.getKey().compareTo(a.getKey());
+            }
+        });
+        for (Object object : sortedEntries) {
 
-        //sort hashmap
-        TreeMap<Double, Duif> sorted = new TreeMap<>();
-        sorted.putAll(wedstrijdUitslag);
-
-        // moet desc zijn
-//        MyComparator comp = new MyComparator(wedstrijdUitslag);
-//
-        Map<Double, Duif> newMap = new TreeMap(sorted);
-        newMap.putAll(wedstrijdUitslag);
-
-        //print hashmap
-        for (Double name : newMap.keySet()) {
-            String key = name.toString();
-            String value = newMap.get(name).toString();
-            System.out.println(key + " " + value);
+            //print your data in your own way
+            System.out.println(object);
         }
+        System.out.println(sortedEntries.get(0).getKey());
 
-        //change key in hash to position
-        // iterator gebruiken om een i te kunnen gebruiken?
-//        for (Duif duif : sorted.values()) {
-//            ChipRing chipring;
-//            chipring = duif.getChipRing();
-//            int behaaldePunten = chipring.getAfstandGevlogen() + sorted.size() + 1 - (i + 1);
-//        }
     }
 
     public double berekenAfstand(Locatie losLocatie, Locatie aankomstLocatie){
