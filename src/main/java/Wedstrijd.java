@@ -15,7 +15,6 @@ public class Wedstrijd {
     public Wedstrijd(Vlucht vlucht, Losplaatsen losPlaatsen) {
         this.vlucht = vlucht;
         this.losplaatsen = losPlaatsen;
-
         setCoordinates(losPlaatsen);
     }
 
@@ -102,6 +101,7 @@ public class Wedstrijd {
             String value = newMap.get(name).toString();
             System.out.println(key + " " + value);
         }
+
         //change key in hash to position
         // iterator gebruiken om een i te kunnen gebruiken?
 //        for (Duif duif : sorted.values()) {
@@ -109,10 +109,7 @@ public class Wedstrijd {
 //            chipring = duif.getChipRing();
 //            int behaaldePunten = chipring.getAfstandGevlogen() + sorted.size() + 1 - (i + 1);
 //        }
-
     }
-
-
 
     public double berekenAfstand(Locatie losLocatie, Locatie aankomstLocatie){
 

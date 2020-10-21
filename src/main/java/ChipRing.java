@@ -10,7 +10,6 @@ public class ChipRing extends Ring{
     private Locatie locatieAankomst;
     private double afstandGevlogen;
 
-
     public ChipRing() {
         Random random = new Random();
         ringNummer = random.nextInt(1000);
