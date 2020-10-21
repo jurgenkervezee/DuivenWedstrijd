@@ -24,12 +24,15 @@ public class Wedstrijd {
 
             case PARIJS:    losLocatie = new Locatie(Losplaatsen.PARIJS.toString(),
                     2.3522219,  48.856614);
+                break;
 
             case BARCELONA: losLocatie = new Locatie( Losplaatsen.BARCELONA.toString(),
                     2.1734035, 41.3850639);
+                break;
 
             case GENT:      losLocatie = new Locatie(Losplaatsen.GENT.toString(),
                     3.7174243, 51.0543422);
+                break;
         }
     }
 
@@ -102,7 +105,6 @@ public class Wedstrijd {
             System.out.println(object);
         }
         System.out.println(sortedEntries.get(0).getKey());
-
     }
 
     public double berekenAfstand(Locatie losLocatie, Locatie aankomstLocatie){
@@ -111,8 +113,8 @@ public class Wedstrijd {
         double lat2 = aankomstLocatie.getBreedteGraad();
         double lon1 = losLocatie.getLengteGraad();
         double lon2 = aankomstLocatie.getLengteGraad();
-        double el1 = 1;
-        double el2 = 1;
+        double el1 = 0.0;
+        double el2 = 0.0;
 
             final int R = 6371; // Radius of the earth
 
