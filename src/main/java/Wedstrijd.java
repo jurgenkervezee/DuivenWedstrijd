@@ -77,32 +77,23 @@ public class Wedstrijd {
 
             //bereken de snelheid
             double snelheid = afstand / (minutes / 60);
-//            System.out.println("Snelheid is: " + (Math.round(snelheid * 100.0) / 100.0));
-            wedstrijdUitslag.put((Math.round(snelheid * 100.0) / 100.0), duif);
+             chipRing.setSnelheid((Math.round(snelheid * 100.0) / 100.0));
 
         }
 
-        //Sort Hashmap
-        List<Map.Entry<Double,Duif>> sortedEntries = new
-                ArrayList<Map.Entry<Double,Duif>>((Collection<? extends Map.Entry<Double, Duif>>) wedstrijdUitslag.entrySet());
+        System.out.println(korf);
 
-        Collections.sort(sortedEntries, new Comparator<Map.Entry<Double,Duif>>() {
+        korf.sort(new Comparator<Duif>() {
             @Override
-            public int compare(Map.Entry<Double, Duif> a, Map.Entry<Double, Duif> b)
-            {
-                //Sorting is done here make changes as per your need
-                // swap a and b for descending order in return statement
-                return b.getKey().compareTo(a.getKey());
+            public int compare(Duif o1, Duif o2) {
+                return Double.compare(o2.getChipRing().getSnelheid(), o1.getChipRing().getSnelheid());
             }
         });
-        for (Object object : sortedEntries) {
 
-            //print your data in your own way
-            System.out.println(object);
-        }
-        System.out.println(sortedEntries.get(0).getKey());
+        System.out.println("\n" + korf);
 
         //maak een loop waarmee je door de korf loopt en de punten toekent
+        // Aantal-kilometers + Aantal-Duiven-die-meededen + 1 – positie
 
     }
 

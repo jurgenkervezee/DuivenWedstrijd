@@ -9,6 +9,7 @@ public class ChipRing extends Ring{
     private Locatie locatieLosplaats;
     private Locatie locatieAankomst;
     private double afstandGevlogen;
+    private double snelheid;
 
     public ChipRing() {
         Random random = new Random();
@@ -71,5 +72,20 @@ public class ChipRing extends Ring{
 
     public double getAfstandGevlogen() {
         return afstandGevlogen;
+    }
+
+    public double getSnelheid() {
+        return snelheid;
+    }
+
+    public void setSnelheid(double snelheid) {
+        this.snelheid = snelheid;
+    }
+
+    @Override
+    public String toString() {
+        return "ChipRing{" +
+                "snelheid=" + snelheid +
+                '}';
     }
 }

@@ -1,8 +1,7 @@
 public class Main {
     public static void main(String[] args){
 
-        //wedstrijd starten
-        Wedstrijd wedstrijd = new Wedstrijd(Vlucht.DAGFOND, Losplaatsen.PARIJS);
+        Wedstrijd wedstrijd = new Wedstrijd(Vlucht.DAGFOND, Losplaatsen.BARCELONA);
 
         //deelnemers Henk Intantieren
         Liefhebber henk = new Liefhebber("Henk", "Bussum",
@@ -28,6 +27,5 @@ public class Main {
         henk.aankomstRegistreren();
         truus.aankomstRegistreren();
         wedstrijd.berekenWedstrijdResultaat();
-
     }
 }

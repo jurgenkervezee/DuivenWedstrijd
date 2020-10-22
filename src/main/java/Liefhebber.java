@@ -40,7 +40,7 @@ public class Liefhebber {
 
         for (int i = 0; i < duifList.size(); i++) {
             if(duifList.get(i).getChipRingNummer()> 0){
-                int addRandomHours = random.nextInt(24);
+                int addRandomHours = random.nextInt(24) + 1;
                 int addRandomMinutes = random.nextInt(60);
                 this.now = LocalDateTime.now().plusHours(addRandomHours).plusMinutes(addRandomMinutes);
                 duifList.get(i).setAankomstTijdEnLocatie(now, locatie.getLengteGraad(), locatie.getBreedteGraad());

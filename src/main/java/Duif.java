@@ -11,6 +11,7 @@ public class Duif {
     private int behaaldePunten;
     private int chipRingNummer;
 
+
     public Duif(int geboorteJaar, GeslachtDuif geslachtDuif, String landAfkorting) {
         this.geboorteJaar = geboorteJaar;
         this.geslachtDuif = geslachtDuif;
@@ -52,9 +53,10 @@ public class Duif {
         return behaaldePunten;
     }
 
+
     @Override
     public String toString() {
-        return eigendomsRing.getEigendomsNummer();
+        return eigendomsRing.getEigendomsNummer() + " " + chipRing;
 
     }
 
