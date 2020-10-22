@@ -8,13 +8,10 @@ public class Wedstrijd {
     private Vlucht vlucht;
     private List<Duif> korf = new ArrayList<>();
     private HashMap<Double, Duif> wedstrijdUitslag = new HashMap<Double, Duif>();
-    private LocalDateTime now;
-    private Losplaatsen losplaatsen;
     private Locatie losLocatie;
 
     public Wedstrijd(Vlucht vlucht, Losplaatsen losPlaatsen) {
         this.vlucht = vlucht;
-        this.losplaatsen = losPlaatsen;
         setCoordinates(losPlaatsen);
     }
 
@@ -53,8 +50,7 @@ public class Wedstrijd {
     }
 
     public void lossingVoorWedstrijd(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-        this.now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now();
 
         for (Duif p: korf){
             p.setLossenTijd(now);
@@ -81,7 +77,7 @@ public class Wedstrijd {
 
             //bereken de snelheid
             double snelheid = afstand / (minutes / 60);
-            System.out.println("Snelheid is: " + (Math.round(snelheid * 100.0) / 100.0));
+//            System.out.println("Snelheid is: " + (Math.round(snelheid * 100.0) / 100.0));
             wedstrijdUitslag.put((Math.round(snelheid * 100.0) / 100.0), duif);
 
         }
@@ -105,7 +101,12 @@ public class Wedstrijd {
             System.out.println(object);
         }
         System.out.println(sortedEntries.get(0).getKey());
+
+        //maak een loop waarmee je door de korf loopt en de punten toekent
+
     }
+
+
 
     public double berekenAfstand(Locatie losLocatie, Locatie aankomstLocatie){
 

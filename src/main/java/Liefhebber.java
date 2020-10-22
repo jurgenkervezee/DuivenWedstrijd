@@ -16,6 +16,7 @@ public class Liefhebber {
     private List<Duif> duifList = new ArrayList<>();
     private List<Rol> rolList = new ArrayList<>();
     private Locatie locatie;
+    private static int aantalLiefhebbers = 0 ;
 
     public Liefhebber(String naam, String woonplaats, String eMailAdres, String landAfkorting, double lengteGraad, double breedteGraad, Rol rol) {
         this.naam = naam;
@@ -24,6 +25,7 @@ public class Liefhebber {
         this.landAfkorting = landAfkorting;
         rolList.add(rol);
         locatie = new Locatie(woonplaats,lengteGraad, breedteGraad);
+        aantalLiefhebbers = aantalLiefhebbers + 1;
     }
 
     public void inschrijvenDuif(int geboorteJaar, GeslachtDuif geslachtDuif, String landAfkorting, Wedstrijd wedstrijd) {
@@ -40,7 +42,6 @@ public class Liefhebber {
             if(duifList.get(i).getChipRingNummer()> 0){
                 int addRandomHours = random.nextInt(24);
                 int addRandomMinutes = random.nextInt(60);
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
                 this.now = LocalDateTime.now().plusHours(addRandomHours).plusMinutes(addRandomMinutes);
                 duifList.get(i).setAankomstTijdEnLocatie(now, locatie.getLengteGraad(), locatie.getBreedteGraad());
             }
@@ -60,5 +61,9 @@ public class Liefhebber {
             }
         }
         return 0;
+    }
+
+    public static int getAantalLiefhebbers() {
+        return aantalLiefhebbers;
     }
 }
